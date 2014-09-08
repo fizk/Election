@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : Villa{% endblock %}
+
+{% block head %}
+{% parent %}
+<link rel="stylesheet" href="custom.css">
+{% endblock %}
+
+{% block content %}
+
+
+	{% if error.status == 404 %}
+		<h1>404</h1>
+		<p>ég bara finn ekki síðuna sem þú baðst um :(</p>
+	{% else %}
+		{{message}}
+		{{error.status}}
+		{{error.statusCode}}
+		<pre>{{error.stack}}</pre>
+	{% endif %}
+
+{% endblock %}

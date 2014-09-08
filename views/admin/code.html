@@ -1,0 +1,16 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : access_code{% endblock %}
+
+{% block head %}
+{% parent %}
+
+{% endblock %}
+
+{% block content %}
+		<h1>Kóði</h1>
+		<p>Þennan kóða þarf frambjóðandi að fá</p>
+		<div class="well">{{code}}</div>
+		<p>Þessi kóði er virkur fyrir <strong>{{party}}</strong> í sveitarfélaginu <strong>{{constituency}}</strong>
+			og var sömuleiðis sendurá netfangið <a href="mailto:{{email}}">{{email}}</a> auk frekari útskýringa</p>
+{% endblock %}

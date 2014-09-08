@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}My Site{% endblock %}</title>
+        <link href="/vendor/bootstrap/dist/css/bootstrap.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+		<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<!--[if IE]>
+		<script src="/vendor/html5shiv/html5shiv.js"></script>
+        <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        {% block head %}{% endblock %}
+		<script src="/vendor/requirejs/require.js" data-main="/javascripts/app"></script>
+		<!--script src="/javascripts/lib.js"></script-->
+    </head>
+    <body>
+
+		<header class="page-header container">
+
+			<hgroup>
+				<h3>Sveitastjórnakosningar 2014</h3>
+				<h1><a href="/">Spurðu frambjóðanda</a></h1>
+				<h2>Leggðu fram spurningu sem er ekki lengri en 140 slög, veldu þitt kjördæmi og málaflokk. Bíddu svo eftir svari...</h2>
+			</hgroup>
+
+			{% if user %}
+				<a href="/auth/logout" class="btn btn-primary">logout</a>
+			{% else %}
+				<a href="/auth/login" class="facebook-login"><i class="icon-facebook"></i><span>Skráðu þig inn með Facebook</span></a>
+			{% endif %}
+
+			<ul role="tablist">
+				<li role="tab" aria-controls="panel1" aria-selected="false"><a href="#">Leggðu fram spurningu</a> </li>
+				<li role="tab" aria-controls="panel2" aria-selected="true"><a href="#">Svör og leit</a> </li>
+                {% if user && (user.constituency || user.admin) %}
+				<li role="tab" aria-controls="panel3" aria-selected="false"><a href="#">{{user.displayName}}</a> </li>
+                {% endif %}
+			</ul>
+			<div role="tabpanel" aria-labelledby="panel1" aria-hidden="true">
+				<form role="form" id="question-form" class="form-inline" action="/question/submit" method="post">
+				<div role="menu">
+					<div role="img">
+						{% if user %}
+						<div>
+						<img class="avatar" src="http://graph.facebook.com/{{user.id}}/picture?height=54&width=54&type=normal" />
+						</div>
+						{% endif %}
+					</div>
+					<div role="question">
+						<label>Hvað viltu vita?</label>
+						<span id="question-counter">-140</span>
+						<input type="text" name="question" class="form-control" id="question" autofocus="autofocus" placeholder="Spurning..." maxlength="140" />
+					</div>
+				</div>
+				<div role="option">
+					<div>
+						<label>Veldu kjördæmi</label>
+						<select name="constituency" class="form-control" id="constituency" required>
+							<option value="" selected disabled>Kjördæmi...</option>
+							{% for constituency in global.constituency %}
+							<optgroup label="{{constituency.name}}">
+								{% for area in constituency.areas %}
+								<option>{{area.name}}</option>
+								{% endfor %}
+							</optgroup>
+							{% endfor %}
+						</select>
+					</div>
+					<div>
+						<label>Veldu málaflokk</label>
+						<select class="form-control" name="category" >
+							{% for category in global.categories %}
+							<option>{{category.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div>
+						<input type="checkbox" checked name="facebook">Birta spurningu á facebook veggnum mínum.
+					</div>
+					<div>
+						<input type="submit" value="Spyrja" class="btn btn-primary" />
+					</div>
+				</div>
+				</form>
+			</div>
+			<div role="tabpanel" aria-labelledby="panel2" aria-hidden="false">
+                <form action="/" method="get" id="filter-form" class="form-horizontal">
+
+
+					<div class="row">
+						<div class="col-md-5">
+							<div class="form-group">
+								<label>Einskorða við sveitafélag</label>
+								<select name="constituency" class="form-control">
+									<option value="">Öll</option>
+									{% for constituency in global.constituency %}
+									<optgroup label="{{constituency.name}}">
+										{% for aria in constituency.areas %}
+										<option>{{aria.name}}</option>
+										{% endfor %}
+									</optgroup>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="form-group">
+								<label>Spurning inniheldur</label>
+								<input type="text" name="querystring" class="form-control" />
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>Aðeins svör</label><input type="checkbox" name="answers" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<label>Efnisflokkar</label>
+						<ul class="tag-list">
+							{% for category in global.categories %}
+							<li><input type="checkbox" name="category[]" id="{{category.name}}" value="{{category.name}}"/> <label for="{{category.name}}" class="icon-cancel">{{category.name}}</label></li>
+							{% endfor %}
+						</ul>
+						</div>
+					</div>
+
+
+
+				</form>
+			</div>
+            {% if user && (user.constituency || user.admin) %}
+			<div role="tabpanel" aria-labelledby="panel3" aria-hidden="true">
+				<ul>
+                    {% if user.constituency %}
+                    <li><a href="/user/answer">Svara Spurningum (manage)</a></li>
+                    {% endif %}
+                    {% if user.admin %}
+					<li><a href="/admin/list">Allar spurningar (manage)</a></li>
+					<li><a href="/admin/users">Allir notendur(manage)</a></li>
+					<li><a href="/admin/generate">Búa til access_token</a></li>
+					<li><a href="/admin/emails">útsendir póstar</a></li>
+                    {% endif %}
+				</ul>
+			</div>
+            {% endif %}
+		</header>
+
+        <main class="container">
+            {% block content %}{% endblock %}
+            <hr>
+        </main>
+		<footer class="container">
+			<p>&copy; Election 2014 | Kosmos&Kaos | Tjarnargata</p>
+		</footer>
+    </body>
+</html>

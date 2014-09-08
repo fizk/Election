@@ -1,0 +1,29 @@
+{
+  "name": "Election",
+  "version": "0.0.1",
+  "description": "Front end for Election",
+  "keywords": [
+    "elections"
+  ],
+  "authors": [
+    "einarvalur"
+  ],
+  "license": "MIT",
+  "homepage": "einar.falkworld.net",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "requirejs": "~2.1.11",
+    "masonry": "~3.1.5"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.1"
+  }
+}

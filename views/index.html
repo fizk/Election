@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}Spurðu frambjóðanda{% endblock %}
+
+{% block head %}
+{% parent %}
+{% endblock %}
+
+{% block content %}
+<ul id="list" class="question-list">
+	{% include "./questions/partial-list.html" %}
+</ul>
+{% endblock %}

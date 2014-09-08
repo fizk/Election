@@ -1,0 +1,126 @@
+{% if questions.length > 0 %}
+{% for q in questions %}
+
+<li>
+	<article class="question {% if q.hidden %}hidden-question{% endif %}">
+		<header>
+			{{q.question}}
+		</header>
+		<section>
+			<img class="avatar" src="http://graph.facebook.com/{{q.user.id}}/picture?type=square" />
+			<h1>{{q.user.displayName}}</h1>
+			<hr />
+			<time>{{q.created|date('d. m / H:i')}}</time>
+			<span>{{q.category}}</span> <span>{{q.constituency}}</span>
+		</section>
+		{% if q.primaries.length > 0  %}
+		<figure>
+			<div class="image-figure" style="background-image: url(/images/{{q.primaries[0].image}})"></div>
+			<figcaption>
+				<h2>{{q.primaries[0].respondent.displayName}} svarar:</h2>
+				<h3>{{q.primaries[0].respondent.party}}</h3>
+				<p>{{q.primaries[0].body|substring|markdown|safe}}</p>
+			</figcaption>
+		</figure>
+		{% elif q.answers.length > 0 %}
+		<figure>
+			<figcaption>
+				<h2>{{q.answers[0].respondent.displayName}} svarar:</h2>
+				<h3>{{q.answers[0].respondent.party}}</h3>
+				<p>{{q.answers[0].body|substring|markdown|safe}}</p>
+			</figcaption>
+		</figure>
+		{% endif %}
+		<aside>
+			<nav>
+				<h2>{{q.answers.length}} svör</h2>
+				<div>
+					<span>Síða <em class="counter">1</em> af <em class="total">{{q.answers.length}}</em></span>
+					<a href="" class="question-answer-previous icon-left" title="fyrri"></a>
+					<a href="" class="question-answer-next icon-right" title="næsta"></a>
+				</div>
+			</nav>
+			<div>
+			<ul class="question-answer-list" data-position="0" data-size="{{q.answers.length}}" style="width: {{q.answers.length*100}}%;">
+				{% for answer in q.answers %}
+				<li style="width: {{100/q.answers.length}}%; border-color:#{{answer.respondent.partyObject.color}}" >
+					<img class="logo" src="{{answer.respondent.partyObject.logo}}" />
+					<div class="question-answer-head">
+						<img class="avatar" src="http://graph.facebook.com/{{answer.respondent.id}}/picture?type=square" />
+						<h2>{{answer.respondent.displayName}}</h2>
+						<h3>{{answer.respondent.party}}</h3>
+					</div>
+					<div class="question-answer-like">
+						{% if user %}
+                            {% if manage %}
+                                <a href="/question/delete/{{q._id.toHexString()}}/{{answer.id}}" class="icon-cancel answer-delete">eyða</a>
+                            {% else %}
+                                {% if answer.liked %}
+                                <a class="question-vote selected icon-star" href="/question/vote/{{q._id.toHexString()}}/{{answer.id}}">{{answer.voters.length}}</a>
+                                {% else %}
+                                <a class="question-vote  icon-star" href="/question/vote/{{q._id.toHexString()}}/{{answer.id}}">{{answer.voters.length}}</a>
+                                {% endif %}
+                            {% endif %}
+						{% endif %}
+					</div>
+					<div class="question-answer-body">
+						<time>{{answer.created|date('d. m / H:i')}}</time>
+						<p>{{answer.body|markdown|safe}}</p>
+					</div>
+					{% if answer.video.lenght > 0 %}
+					<video>
+						<source src="/images/{{answer.image}}" type="video/ogg">
+						<source src="/images/{{answer.image}}" type="video/mp4">
+						<img src="/images/{{answer.image}}" class="poster" />
+					</video>
+					{% elseif answer.youtube %}
+					<iframe width="100%" height="315" src="//www.youtube.com/embed/{{answer.youtube}}" frameborder="0" allowfullscreen></iframe>
+					{% elseif answer.image %}
+					<img src="/images/{{answer.image}}" class="poster" />
+					{% else %}
+					{% endif %}
+				</li>
+				{% endfor %}
+			</ul>
+			</div>
+		</aside>
+		<footer>
+
+			<a href="" class="question-answer icon-comment">{{q.answers.length}}</a>
+
+			{% if user and !answer and !manage %}
+			{% if q.liked %}
+			<a class="question-vote icon-star selected" href="/question/vote/{{q._id.toHexString()}}">{{q.voters.length}}</a>
+			{% else %}
+			<a class="question-vote icon-star" href="/question/vote/{{q._id.toHexString()}}">{{q.voters.length}}</a>
+			{% endif %}
+			{% endif %}
+
+			{% if answer %}
+			<a href="/question/answer/{{q._id.toHexString()}}" class="question-manage icon-cancel">svara</a>
+			{% endif %}
+
+			{% if manage %}
+			<a href="/question/hide/{{q._id.toHexString()}}" class="icon-cancel question-hide" title="Fela spurningu">fela</a>
+			<a href="/question/delete/{{q._id.toHexString()}}" class="icon-cancel question-delete" title="Eyða spurningu">eyða</a>
+			{% endif %}
+
+			{% if !answer and !manage %}
+			<a href="#" class="question-share icon-share" title="Deila"></a>
+			{% endif %}
+		</footer>
+
+		<div role="alertdialog">
+			<div>
+				<a href="http://www.facebook.com/sharer.php?url={{'http://'|url_encode}}/{{host}}/question/{{q._id.toHexString()}}" class="icon-facebook" title="Facebook"></a>
+				<a href="http://www.twitter.com/share?url={{'http://'|url_encode}}/{{host}}/question/{{q._id.toHexString()}}" class="icon-twitter" title="Twitter"></a>
+				<a href="https://plus.google.com/share?url={{'http://'|url_encode}}/{{host}}/question/{{q._id.toHexString()}}" class="icon-gplus" title="google+"></a>
+				<input class="form-control" value="http://{{host}}/question/{{q._id.toHexString()}}" />
+			</div>
+		</div>
+	</article>
+</li>
+{% endfor %}
+{% else %}
+		<li>Engar niðurstöður fundust</li>
+{% endif %}

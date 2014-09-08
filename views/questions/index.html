@@ -1,0 +1,95 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : Svarblað{% endblock %}
+
+{% block head %}
+{% parent %}
+	<!-- for Google -->
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+
+	<meta name="author" content="" />
+	<meta name="copyright" content="" />
+	<meta name="application-name" content="" />
+
+	<!-- for Facebook -->
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="{{host}}/question/{{question._id.toHexString()}}" />
+	<meta property="og:description" content="" />
+
+	<!-- for Twitter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="twitter:image" content="" />
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+<article class="question extended">
+	<header>
+		{{question.question}}
+	</header>
+	<section>
+		<img class="avatar" src="http://graph.facebook.com/{{question.user.id}}/picture?type=square" />
+		<h1>{{question.user.displayName}}</h1>
+		<hr />
+		<time>{{question.created|date('d. m / H:i')}}</time>
+		<span>{{question.category}}</span> <span>{{question.constituency}}</span>
+	</section>
+	<aside>
+		<div>
+			<ul class="question-answer-list" data-position="0" data-size="{{question.answers.length}}">
+				{% for answer in question.answers %}
+				<li>
+					<div class="question-answer-head">
+						<img class="avatar" src="http://graph.facebook.com/{{answer.respondent.id}}/picture?type=square" />
+						<h2>{{answer.respondent.displayName}}</h2>
+						<h3>{{answer.respondent.party}}</h3>
+					</div>
+
+					<div class="question-answer-body">
+						<time>{{answer.created|date('d. m / H:i')}}</time>
+						{{answer.body|markdown|safe}}
+					</div>
+
+					{% if answer.video.lenght > 0 %}
+					<video>
+						<source src="/images/{{answer.image}}" type="video/ogg">
+						<source src="/images/{{answer.image}}" type="video/mp4">
+						<img src="/images/{{answer.image}}" class="poster" />
+					</video>
+					{% elseif answer.image %}
+					<img src="/images/{{answer.image}}" class="poster" />
+					{% else %}
+					{% endif %}
+
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</aside>
+	<footer>
+		<a href="http://www.facebook.com/sharer.php?url={{'http://'|url_encode}}/{{host}}/question/{{question._id.toHexString()}}" class="icon-facebook" title="Facebook"></a>
+		<a href="http://www.twitter.com/share?url={{'http://'|url_encode}}/{{host}}/question/{{question._id.toHexString()}}" class="icon-twitter" title="Twitter"></a>
+		<a href="https://plus.google.com/share?url={{'http://'|url_encode}}/{{host}}/question/{{question._id.toHexString()}}" class="icon-gplus" title="google+"></a>
+	</footer>
+
+
+</article>
+
+
+
+
+
+
+
+{% endblock %}

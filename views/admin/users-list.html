@@ -1,0 +1,17 @@
+{% for user in users %}
+	<li>
+		<article class="user {% if user.constituency %}extended{% endif %}">
+			<header>
+				<img class="avatar" src="http://graph.facebook.com/{{user.id}}/picture?type=square" />
+				<h1><a href="{{user.profileUrl}}" target="_blank">{{user.displayName}}</a></h1>
+				<h2> {% if user.constituency %} {{user.constituency}} | {{user.party}} {% else %} &nbsp; {% endif %}</h2>
+			</header>
+			<section>
+			</section>
+			<footer>
+				<a href="/admin/users/delete/{{user.id}}" class="icon-cancel user-delete">delete</a>
+				<a href="/admin/users/admin/{{user.id}}" class="icon-user user-admin">{%if user.admin%}afskrá sem admin{%else%}gera að admin{%endif%}</a>
+			</footer>
+		</article>
+	</li>
+{% endfor %}

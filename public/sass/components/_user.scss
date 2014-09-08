@@ -1,0 +1,65 @@
+.user-list{
+	@extend %panel_list;
+}
+
+	#user-filter-form{
+		padding: $padding 0;
+		text-align: right;
+	}
+
+	article.user{
+		@include border-radius;
+		img.avatar{
+			@extend %avatar;
+			float: left;
+		}
+
+		header{
+			@include pie-clearfix;
+			background-color: $color-white;
+			border-style: solid solid none solid;
+			border-color: $color-gray;
+			border-width: 1px;
+			@include border-radius($default-border-radius $default-border-radius 0 0);
+			padding: $padding;
+			h1{
+				@include adjust-font-size-to($font-size-small,1,$font-size-base);
+				@include padding-leader(1/2,$font-size-small);
+				margin-left: 75px;
+				@include ellipsis;
+			}
+			h2{
+				@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				margin-left: 75px;
+				@include ellipsis;
+			}
+		}
+		section{
+		}
+		footer{
+			@extend %panel-footer;
+			a{
+				@extend %footer-buttons;
+			}
+			a.user-delete{
+				@extend %footer-buttons;
+				background-color: rgba($color-red,0);
+				@include border-radius(0 0 0 $default-border-radius);
+				//@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+			}
+			a.user-delete:hover{
+				background-color: rgba($color-red,1);
+			}
+			a.user-admin{
+				@extend %footer-buttons;
+				background-color: rgba($color-purple,0);
+			}
+			a.user-admin:hover{
+				background-color: rgba($color-purple,1);
+			}
+		}
+
+		&.extended{
+			background-color: $color-gray-light;
+		}
+	}

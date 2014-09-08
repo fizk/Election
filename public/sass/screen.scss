@@ -1,0 +1,33 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+//@import "compass/css3/box-shadow";
+//@import "compass/css3/inline-block";
+
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/extensions";
+@import "helpers/fonts";
+@import "helpers/animation";
+
+@import "components/master";
+@import "components/layout";
+@import "components/question";
+@import "components/emails";
+@import "components/user";
+@import "components/tabs";
+
+
+
+
+
+	img.poster{
+	  width: 100%;
+		vertical-align: middle;
+	}
+	video{
+	  width: 100%;
+	}

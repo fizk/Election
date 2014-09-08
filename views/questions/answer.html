@@ -1,0 +1,18 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : Svarblað{% endblock %}
+
+{% block head %}
+{% parent %}
+...
+{% endblock %}
+
+{% block content %}
+
+<span>{{ answer.constituency }}</span> |
+<span>{{ answer.category }}</span> |
+<time>{{ answer.created|date('d. m H:i') }}</time>
+<p>{{ answer.question }}</p>
+{% include "./answer-form.html" %}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : Búa til access_code{% endblock %}
+
+{% block head %}
+{% parent %}
+
+{% endblock %}
+
+{% block content %}
+		<form method="post" action="/admin/generate" role="form" class="form-inline">
+			<div class="form-group">
+				<label class="sr-only" for="select-party">Stjórnmálaflokkur</label>
+				<select id="select-party" name="party" class="form-control">
+					{% for party in global.parties %}
+					<option value="{{party.hash}}">{{party.name}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-group">
+				<select name="constituency" class="form-control" id="constituency">
+					{% for constituency in global.constituency %}
+					<optgroup label="{{constituency.name}}">
+						{% for area in constituency.areas %}
+						<option value="{{area.hash}}">{{area.name}}</option>
+						{% endfor %}
+					</optgroup>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-group">
+				<label class="sr-only" for="select-party">Stjórnmálaflokkur</label>
+				<input type="email" name="email" class="form-control" placeholder="Netfang viðtakanda..." />
+			</div>
+			<input type="submit" value="Búa til kóða" class="btn btn-primary"/>
+		</form>
+{% endblock %}

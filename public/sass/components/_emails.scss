@@ -1,0 +1,35 @@
+
+@import "compass/typography/text/ellipsis";
+
+
+	#email-filter-form{
+		padding: $padding 0;
+		text-align: right;
+	}
+
+	article.emails{
+		@extend article.question;
+		header{
+			h1{
+				@include ellipsis;
+			}
+		}
+
+		section{
+			h2{@include ellipsis;}
+			h3{@include ellipsis;}
+			code{
+				font-family: monospace;
+				word-wrap: break-word;
+				@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				display: block;
+				white-space: pre;
+				padding: $padding/2 0;
+			}
+		}
+		footer{
+			text-align: right;
+			padding: $padding/2 $padding;
+			@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+		}
+	}

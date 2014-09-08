@@ -1,0 +1,114 @@
+
+@import "compass/css3/box-shadow";
+@import "compass/css3/inline-block";
+@import "compass/css3/border-radius";
+@import "compass/css3/transition";
+@import "compass/typography/vertical_rhythm";
+@import "compass/utilities/general";
+
+	%panel_list{
+		margin: -$margin/2;
+		margin-bottom: $margin/2;
+		>li{
+			> div{
+				@include box-shadow(0 0 5px rgba(200,200,200,.5));
+				margin-bottom: 0;
+			}
+			width: 33.33%;
+			@include inline-block;
+			padding: $margin/2;
+			vertical-align: top;
+		}
+		> li.double{
+			width: 66.66%;
+		}
+		@include breakpoint-to($screen-size-medium){
+			>li{
+				width: 50%;
+			}
+			>li.double{
+				width: 100%;
+			}
+		}
+		@include breakpoint-to($screen-size-small){
+			margin: -$margin/2;
+			>li{
+				padding-bottom: 0;
+				display: block;
+				width: auto;
+			}
+			> li.double{
+				width: auto;
+			}
+		}
+	}
+
+
+	%avatar{
+		border:4px solid $color-gray;
+		@include border-radius(50%);
+		margin: 0 $padding/2 $padding/2 0;
+	}
+
+
+	%panel-footer{
+		@include pie-clearfix;
+		background-color: $color-gray-dark;
+		color: $color-white;
+		position: relative;
+		@include border-radius(0 0 $default-border-radius $default-border-radius);
+	}
+
+	%footer-buttons{
+		padding: $padding/2 $padding;
+		float: left;
+		color: $color-white;
+		font-weight: 200;
+		@include transition(background-color $animation-speed);
+		@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+		&:before{
+			@include adjust-font-size-to($font-size-base,1,$font-size-smaller);
+			vertical-align: middle;
+		}
+	}
+
+	%default-text{
+		ul{
+			list-style: disc inside;
+		}
+		ol{
+			list-style: decimal inside;
+		}
+		strong{
+			font-weight: 600;
+		}
+		em{
+			font-style: italic;
+		}
+		p, ul, ol, h1, h2, h3{
+			@include margin-leader(1/4,$font-size-base);
+			@include margin-trailer(1/4,$font-size-base);
+		}
+		h1{
+			@include adjust-font-size-to($font-size-large,1,$font-size-base);
+			font-weight: 600;
+			@include margin-leader(1/2,$font-size-base);
+		}
+		h2{
+			@include adjust-font-size-to($font-size-base,1,$font-size-base);
+			@include margin-leader(1/2,$font-size-base);
+			font-weight: 600;
+		}
+		h3{
+			@include adjust-font-size-to($font-size-base,1,$font-size-base);
+			@include margin-leader(1/2,$font-size-base);
+		}
+		blockquote{
+			padding-left: rhythm(1/2);
+			border-left: 4px solid $color-gray-light;
+			font-style: italic;
+		}
+		a{
+			color: $color-purple;
+		}
+	}

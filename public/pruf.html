@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		input{
+			background-image: url("stylesheets/images/background-upload.jpg");
+			background-repeat: no-repeat;
+		}
+	</style>
+
+</head>
+<body>
+
+<input id="input" type="text">
+
+<script>
+	var element = document.getElementById('input');
+
+	var i = 0;
+	setInterval(function(){
+
+		element.style.backgroundSize = i+'%';
+		i++;
+
+	},2000);
+
+
+</script>
+</body>
+</html>

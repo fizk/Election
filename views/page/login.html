@@ -1,0 +1,12 @@
+{% extends '../layout.html' %}
+
+{% block title %}Útskýringar{% endblock %}
+
+{% block head %}
+{% parent %}
+{% endblock %}
+
+{% block content %}
+<p>Þú þarft að vera skráð/ur inn á facebook til að geta notað.</p>
+<a href="/auth/login" class="facebook-login"><i class="icon-facebook"></i><span>Skráðu þig inn með Facebook</span></a>
+{% endblock %}

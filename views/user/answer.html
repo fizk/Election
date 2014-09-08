@@ -1,0 +1,10 @@
+{% extends '../layout.html' %}
+{% block title %}Spurðu frambjóðanda : Svara spurningum{% endblock %}
+
+{% block content %}
+        <h1>Svara spurningum</h1>
+
+<ul class="question-list">
+	{% include "../questions/partial-list.html" %}
+</ul>
+{% endblock %}

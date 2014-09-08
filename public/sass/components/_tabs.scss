@@ -1,0 +1,53 @@
+
+
+//- - - - [BEHAVIOR] - - - - - - - - - - - - - - - - - - -
+	[aria-selected=true]{}
+	[aria-selected=false]{}
+
+	[aria-hidden=false]{ display: block; }
+	[aria-hidden=true]{ display: none; }
+
+
+
+
+//- - - - [DISPLAY] - - - - - - - - - - - - - - - - - - -
+
+
+	[role=tablist]{
+		@include pie-clearfix;
+		[role=tab]{
+			float: left;
+			border-style: solid solid none solid;
+			border-color: $color-gray;
+			border-width: 1px;
+			margin-right: -1px;
+			@include border-radius($default-border-radius $default-border-radius 0 0);
+			//width: 45%;
+			a{
+				display: block;
+				text-align: center;
+				padding: rhythm(1/2);
+				@include adjust-font-size-to($font-size-large,1,$font-size-base);
+			}
+		}
+	}
+
+	[aria-selected=true]{
+		background-color: $color-gray-light;
+
+	}
+	[aria-selected=false]{
+		background-color: $color-white;
+		a{
+			border-bottom: 1px solid $color-gray;
+			padding-bottom: 13px !important;
+		}
+	}
+
+	[role=tabpanel]{
+		margin-top: -1px;
+		padding: $padding;
+		background-color: $color-gray-light;
+		border: 1px solid $color-gray;
+		@include border-radius(0 0 $default-border-radius $default-border-radius);
+	}

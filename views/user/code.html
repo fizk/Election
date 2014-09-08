@@ -1,0 +1,24 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : Búa til access_code{% endblock %}
+
+{% block head %}
+{% parent %}
+{% endblock %}
+
+{% block content %}
+		<p>Hafir þú fengið auðkenniskóða hjá mbl.is getur þú slegið hann inn hér.</p>
+		<p>Hafir þú ekki fengið kóða en ert frambjóðandi eða einhver sem vilt svara spurningum
+			in nafni frambjóðanda skalt þú hafa samband við mbl.is</p>
+		{% if error %}
+		<div class="alert alert-danger">
+			<p>Kóðinn er ekki réttur</p>
+		</div>
+		{% endif %}
+		<form method="post" action="/user/code" role="form" class="form-inline">
+			<div class="form-group">
+				<input type="text" name="code" class="form-control" placeholder="Sláðu inn auðkenniskóða..." />
+			</div>
+			<input type="submit" value="Staðfesta" class="btn btn-default" />
+		</form>
+{% endblock %}

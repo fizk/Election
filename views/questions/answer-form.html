@@ -1,0 +1,30 @@
+<form role="form" method="post" action="/question/answer/{{answer._id.toHexString()}}">
+	<p>{{answer.question}}</p>
+	<div class="form-group">
+		<!--label for="answer">Svar</label-->
+		<textarea id="answer" name="answer" class="form-control" required="required" placeholder="Svar..."></textarea>
+	</div>
+	<div class="form-group">
+		<input type="text" name="file" data-url="/media/image" placeholder="Mynd..."  class="form-control">
+	</div>
+	<div class="form-group">
+		<input type="text" name="youtube" placeholder="Youtube slóð..."  class="form-control">
+	</div>
+	<div class="form-group">
+		<!--label for="">Svara sem...</label-->
+		<ul class="respondents-list">
+			{% for user in respondents %}
+			<li>
+				<img src="http://graph.facebook.com/{{user.id}}/picture?type=square" class="avatar" />
+				<label>
+					<input type="radio" name="respondent" value="{{user.id}}" {% if loop.first %}checked="checked"{% endif %} />
+					{{user.displayName}}
+				</label>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+
+	<button type="submit" class="icon-ok btn btn-success" value="svara" >svara</button>
+	<a href="#" class="icon-cancel btn btn-danger cancel" >hætta við</a>
+</form>

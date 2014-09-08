@@ -1,0 +1,16 @@
+<p>{{question.question}}</p>
+<p>{{question.constituency}} {{question.category}}</p>
+<a href="{{link}}">{{link}}</a>
+<ul>
+	{% for answer in question.answers %}
+	<li>
+		<span>{{answer.created|date('d. M')}}</span>
+		<img class="avatar" src="http://graph.facebook.com/{{answer.respondent.id}}/picture?type=square" />
+		<p>{{answer.respondent.displayName}}</p>
+		{% if answer.image %}
+		<img src="{{images}}{{answer.image}}" class="poster" />
+		{% endif %}
+		{{answer.body|markdown|safe}}
+	</li>
+	{% endfor %}
+</ul>

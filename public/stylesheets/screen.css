@@ -1,0 +1,1644 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 9, ../sass/helpers/_extensions.scss */
+.question-list, .user-list {
+  margin: -15px;
+  margin-bottom: 15px;
+}
+/* line 12, ../sass/helpers/_extensions.scss */
+.question-list > li, .user-list > li {
+  width: 33.33%;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 15px;
+  vertical-align: top;
+}
+/* line 13, ../sass/helpers/_extensions.scss */
+.question-list > li > div, .user-list > li > div {
+  -webkit-box-shadow: 0 0 5px rgba(200, 200, 200, 0.5);
+  -moz-box-shadow: 0 0 5px rgba(200, 200, 200, 0.5);
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.5);
+  margin-bottom: 0;
+}
+/* line 22, ../sass/helpers/_extensions.scss */
+.question-list > li.double, .user-list > li.double {
+  width: 66.66%;
+}
+@media only screen and (max-width: 768px) {
+  /* line 26, ../sass/helpers/_extensions.scss */
+  .question-list > li, .user-list > li {
+    width: 50%;
+  }
+  /* line 29, ../sass/helpers/_extensions.scss */
+  .question-list > li.double, .user-list > li.double {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 480px) {
+  /* line 9, ../sass/helpers/_extensions.scss */
+  .question-list, .user-list {
+    margin: -15px;
+  }
+  /* line 35, ../sass/helpers/_extensions.scss */
+  .question-list > li, .user-list > li {
+    padding-bottom: 0;
+    display: block;
+    width: auto;
+  }
+  /* line 40, ../sass/helpers/_extensions.scss */
+  .question-list > li.double, .user-list > li.double {
+    width: auto;
+  }
+}
+
+/* line 47, ../sass/helpers/_extensions.scss */
+article.question img.avatar, article.emails img.avatar, article.user img.avatar {
+  border: 4px solid #cccccc;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 15px 15px 0;
+}
+
+/* line 54, ../sass/helpers/_extensions.scss */
+article.question footer, article.emails footer, article.user footer {
+  *zoom: 1;
+  background-color: #444444;
+  color: white;
+  position: relative;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.question footer:after, article.emails footer:after, article.user footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 62, ../sass/helpers/_extensions.scss */
+article.question footer a.question-vote, article.emails footer a.question-vote, article.question footer a.question-answer, article.emails footer a.question-answer, article.question footer a.question-share, article.emails footer a.question-share, article.question footer a.question-manage, article.emails footer a.question-manage, article.question footer a.question-delete, article.emails footer a.question-delete, article.question footer a.question-hide, article.emails footer a.question-hide, article.user footer a, article.user footer a.user-delete, article.user footer a.user-admin {
+  padding: 15px 30px;
+  float: left;
+  color: white;
+  font-weight: 200;
+  -webkit-transition: background-color 0.1s;
+  -moz-transition: background-color 0.1s;
+  -o-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+  font-size: 0.75em;
+  line-height: 2em;
+}
+/* line 69, ../sass/helpers/_extensions.scss */
+article.question footer a.question-vote:before, article.emails footer a.question-vote:before, article.question footer a.question-answer:before, article.emails footer a.question-answer:before, article.question footer a.question-share:before, article.emails footer a.question-share:before, article.question footer a.question-manage:before, article.emails footer a.question-manage:before, article.question footer a.question-delete:before, article.emails footer a.question-delete:before, article.question footer a.question-hide:before, article.emails footer a.question-hide:before, article.user footer a:before, article.user footer a.user-delete:before, article.user footer a.user-admin:before {
+  font-size: 1.33333em;
+  line-height: 1.5em;
+  vertical-align: middle;
+}
+
+/* line 76, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body ul, article.emails aside ul.question-answer-list > li div.question-answer-body ul {
+  list-style: disc inside;
+}
+/* line 79, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body ol, article.emails aside ul.question-answer-list > li div.question-answer-body ol {
+  list-style: decimal inside;
+}
+/* line 82, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body strong, article.emails aside ul.question-answer-list > li div.question-answer-body strong {
+  font-weight: 600;
+}
+/* line 85, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body em, article.emails aside ul.question-answer-list > li div.question-answer-body em {
+  font-style: italic;
+}
+/* line 88, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body p, article.emails aside ul.question-answer-list > li div.question-answer-body p, article.question aside ul.question-answer-list > li div.question-answer-body ul, article.emails aside ul.question-answer-list > li div.question-answer-body ul, article.question aside ul.question-answer-list > li div.question-answer-body ol, article.emails aside ul.question-answer-list > li div.question-answer-body ol, article.question aside ul.question-answer-list > li div.question-answer-body h1, article.emails aside ul.question-answer-list > li div.question-answer-body h1, article.question aside ul.question-answer-list > li div.question-answer-body h2, article.emails aside ul.question-answer-list > li div.question-answer-body h2, article.question aside ul.question-answer-list > li div.question-answer-body h3, article.emails aside ul.question-answer-list > li div.question-answer-body h3 {
+  margin-top: 0.375em;
+  margin-bottom: 0.375em;
+}
+/* line 92, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body h1, article.emails aside ul.question-answer-list > li div.question-answer-body h1 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 97, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body h2, article.emails aside ul.question-answer-list > li div.question-answer-body h2 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+  font-weight: 600;
+}
+/* line 102, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body h3, article.emails aside ul.question-answer-list > li div.question-answer-body h3 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0.75em;
+}
+/* line 106, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body blockquote, article.emails aside ul.question-answer-list > li div.question-answer-body blockquote {
+  padding-left: 0.75em;
+  border-left: 4px solid #f3f3f3;
+  font-style: italic;
+}
+/* line 111, ../sass/helpers/_extensions.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body a, article.emails aside ul.question-answer-list > li div.question-answer-body a {
+  color: #576b94;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-Bold-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-Bold-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-Bold-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-Bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-BoldItalic-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-BoldItalic-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-BoldItalic-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-BoldItalic-webfont.svg#open_sansbold_italic") format("svg");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-ExtraBold-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-ExtraBold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-ExtraBold-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-ExtraBold-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-ExtraBold-webfont.svg#open_sansextrabold") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-ExtraBoldItalic-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-ExtraBoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-ExtraBoldItalic-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-ExtraBoldItalic-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-ExtraBoldItalic-webfont.svg#open_sansextrabold_italic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-Italic-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-Italic-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-Italic-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-Italic-webfont.svg#open_sansitalic") format("svg");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-Light-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-Light-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-Light-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-LightItalic-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-LightItalic-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-LightItalic-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-LightItalic-webfont.svg#open_sanslight_italic") format("svg");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-Regular-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-Regular-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-Regular-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-Regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-Semibold-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-Semibold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-Semibold-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-Semibold-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-Semibold-webfont.svg#open_sanssemibold") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open-sans';
+  src: url("fonts/open-sans/OpenSans-SemiboldItalic-webfont.eot");
+  src: url("fonts/open-sans/OpenSans-SemiboldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/open-sans/OpenSans-SemiboldItalic-webfont.woff") format("woff"), url("fonts/open-sans/OpenSans-SemiboldItalic-webfont.ttf") format("truetype"), url("fonts/open-sans/OpenSans-SemiboldItalic-webfont.svg#open_sanssemibold_italic") format("svg");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url("fonts/icons/icons.eot?28293694");
+  src: url("fonts/icons/icons.eot?28293694#iefix") format("embedded-opentype"), url("fonts/icons/icons.woff?28293694") format("woff"), url("fonts/icons/icons.ttf?28293694") format("truetype"), url("fonts/icons/icons.svg?28293694#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?28293694#fontello') format('svg');
+  }
+}
+*/
+/* line 135, ../sass/helpers/_fonts.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+/* line 166, ../sass/helpers/_fonts.scss */
+[class^="icon-"].spin:before, [class*=" icon-"].spin:before {
+  -webkit-animation: spin 1s infinite linear;
+}
+
+/* line 169, ../sass/helpers/_fonts.scss */
+.icon-cancel:before {
+  content: '\e806';
+}
+
+/* '' */
+/* line 170, ../sass/helpers/_fonts.scss */
+.icon-gplus:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 171, ../sass/helpers/_fonts.scss */
+.icon-down:before {
+  content: '\e808';
+}
+
+/* '' */
+/* line 172, ../sass/helpers/_fonts.scss */
+.icon-left:before {
+  content: '\e809';
+}
+
+/* '' */
+/* line 173, ../sass/helpers/_fonts.scss */
+.icon-right:before {
+  content: '\e80b';
+}
+
+/* '' */
+/* line 174, ../sass/helpers/_fonts.scss */
+.icon-share:before {
+  content: '\e80a';
+}
+
+/* '' */
+/* line 175, ../sass/helpers/_fonts.scss */
+.icon-star:before {
+  content: '\e805';
+}
+
+/* '' */
+/* line 176, ../sass/helpers/_fonts.scss */
+.icon-comment:before {
+  content: '\e807';
+}
+
+/* '' */
+/* line 177, ../sass/helpers/_fonts.scss */
+.icon-up:before {
+  content: '\e80d';
+}
+
+/* '' */
+/* line 178, ../sass/helpers/_fonts.scss */
+.icon-filter:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 179, ../sass/helpers/_fonts.scss */
+.icon-facebook:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 180, ../sass/helpers/_fonts.scss */
+.icon-twitter:before {
+  content: '\e801';
+}
+
+/* '' */
+/* line 181, ../sass/helpers/_fonts.scss */
+.icon-user:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 182, ../sass/helpers/_fonts.scss */
+.icon-thumbs:before {
+  content: '\e80c';
+}
+
+/* '' */
+@-moz-keyframes spin {
+  /* line 3, ../sass/helpers/_animation.scss */
+  from {
+    -moz-transform: rotate(0deg);
+  }
+
+  /* line 4, ../sass/helpers/_animation.scss */
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  /* line 7, ../sass/helpers/_animation.scss */
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  /* line 8, ../sass/helpers/_animation.scss */
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  /* line 11, ../sass/helpers/_animation.scss */
+  from {
+    transform: rotate(0deg);
+  }
+
+  /* line 12, ../sass/helpers/_animation.scss */
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* line 61, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+* html {
+  font-size: 100%;
+}
+
+/* line 64, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 16px;
+  line-height: 1.375em;
+}
+
+/* line 10, ../sass/components/_master.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 13, ../sass/components/_master.scss */
+body {
+  font-family: open-sans;
+  color: #333333;
+  background-size: 100%;
+}
+
+/* line 20, ../sass/components/_master.scss */
+a {
+  text-decoration: none;
+  color: #333333;
+}
+/* line 23, ../sass/components/_master.scss */
+a:hover {
+  text-decoration: none;
+}
+/* line 24, ../sass/components/_master.scss */
+a:active {
+  text-decoration: none;
+}
+
+/* line 26, ../sass/components/_master.scss */
+p:empty {
+  display: none;
+}
+
+/* line 36, ../sass/components/_master.scss */
+a:focus, a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: 0;
+  outline: 0;
+}
+
+/* line 10, ../sass/components/_layout.scss */
+.facebook-login {
+  background-color: #576b94;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7888a9), color-stop(100%, #576b94));
+  background: -webkit-linear-gradient(top, #7888a9, #576b94);
+  background: -moz-linear-gradient(top, #7888a9, #576b94);
+  background: -o-linear-gradient(top, #7888a9, #576b94);
+  background: linear-gradient(top, #7888a9, #576b94);
+  margin: 30px auto;
+  display: block;
+  border: 1px solid #455576;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  width: 268px;
+}
+/* line 22, ../sass/components/_layout.scss */
+.facebook-login i {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  color: white;
+  padding: 10px;
+  border-style: solid solid none none;
+  border-width: 1px;
+  border-color: #8997b4;
+}
+/* line 30, ../sass/components/_layout.scss */
+.facebook-login span {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  line-height: 1.9em;
+  text-shadow: 0 2px #455576;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px 15px;
+  border-top: 1px solid #8997b4;
+  border-left: 1px solid #455576;
+}
+
+/* line 43, ../sass/components/_layout.scss */
+header.page-header {
+  border: none;
+}
+/* line 46, ../sass/components/_layout.scss */
+header.page-header hgroup h1 {
+  font-size: 3em;
+  line-height: 1.83333em;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 51, ../sass/components/_layout.scss */
+header.page-header hgroup h2 {
+  text-align: center;
+}
+/* line 54, ../sass/components/_layout.scss */
+header.page-header hgroup h3 {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 60, ../sass/components/_layout.scss */
+header.page-header hr {
+  width: 50%;
+  margin: auto;
+}
+/* line 65, ../sass/components/_layout.scss */
+header.page-header img.avatar {
+  padding: 3px;
+  margin-right: 15px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 74, ../sass/components/_layout.scss */
+header.page-header [role=form] label {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: block;
+}
+/* line 82, ../sass/components/_layout.scss */
+header.page-header [role=menu] {
+  display: table;
+  table-layout: fixed;
+}
+/* line 85, ../sass/components/_layout.scss */
+header.page-header [role=menu] > div {
+  display: table-cell;
+  vertical-align: top;
+  width: 100%;
+}
+/* line 90, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=img] {
+  position: relative;
+  width: 60px;
+  margin-right: 15px;
+}
+/* line 94, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=img] > div {
+  padding: 3px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+/* line 101, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=img] > div:after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: -7px;
+  bottom: 23px;
+  border-style: none solid solid none;
+  border-color: #cccccc;
+  border-width: 1px;
+  background-color: white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 114, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=img] img {
+  border: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+/* line 123, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=question] {
+  position: relative;
+  padding-left: 15px;
+}
+/* line 126, ../sass/components/_layout.scss */
+header.page-header [role=menu] div[role=question] span {
+  position: absolute;
+  right: 0;
+  color: #ff6600;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  padding: 7.5px;
+}
+/* line 134, ../sass/components/_layout.scss */
+header.page-header [role=menu] input {
+  width: 100%;
+}
+/* line 139, ../sass/components/_layout.scss */
+header.page-header [role=option] {
+  display: table;
+  table-layout: fixed;
+}
+/* line 142, ../sass/components/_layout.scss */
+header.page-header [role=option] > div {
+  display: table-cell;
+  width: 25%;
+}
+/* line 149, ../sass/components/_layout.scss */
+header.page-header #filter-form .row .form-group {
+  margin: 0;
+}
+/* line 153, ../sass/components/_layout.scss */
+header.page-header .tag-list {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 155, ../sass/components/_layout.scss */
+header.page-header .tag-list > li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  white-space: nowrap;
+  display: inline;
+  float: left;
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: 15px;
+}
+/* line 48, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+header.page-header .tag-list > li:first-child, header.page-header .tag-list > li.first {
+  padding-left: 0;
+}
+/* line 49, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+header.page-header .tag-list > li:last-child {
+  padding-right: 0;
+}
+/* line 50, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/typography/lists/_horizontal-list.scss */
+header.page-header .tag-list > li.last {
+  padding-right: 0;
+}
+/* line 158, ../sass/components/_layout.scss */
+header.page-header .tag-list > li:first-child {
+  padding-left: 15px;
+}
+/* line 161, ../sass/components/_layout.scss */
+header.page-header .tag-list > li input {
+  display: none;
+}
+/* line 162, ../sass/components/_layout.scss */
+header.page-header .tag-list > li label {
+  padding: 3.75px 7.5px;
+  padding-left: 0;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  background-color: #444444;
+  position: relative;
+}
+/* line 172, ../sass/components/_layout.scss */
+header.page-header .tag-list > li label:after {
+  content: ' ';
+  display: block;
+  border-style: solid;
+  border-width: 14px;
+  border-color: transparent #444444 transparent transparent;
+  position: absolute;
+  left: -26px;
+  top: 0;
+}
+/* line 182, ../sass/components/_layout.scss */
+header.page-header .tag-list > li input:checked + label {
+  background-color: #33993f;
+}
+/* line 185, ../sass/components/_layout.scss */
+header.page-header .tag-list > li input:checked + label:after {
+  border-color: transparent #33993f transparent transparent;
+}
+
+/* line 193, ../sass/components/_layout.scss */
+main.container > h1 {
+  text-align: center;
+  font-size: 1.25em;
+  line-height: 1.1em;
+  margin-top: 1.1em;
+  margin-bottom: 1.1em;
+}
+
+/* line 16, ../sass/components/_question.scss */
+article.question, article.emails {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 15px rgba(85, 172, 238, 0);
+  -moz-box-shadow: 0 0 15px rgba(85, 172, 238, 0);
+  box-shadow: 0 0 15px rgba(85, 172, 238, 0);
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  position: relative;
+}
+/* line 21, ../sass/components/_question.scss */
+article.question a.icon-facebook, article.emails a.icon-facebook {
+  color: white;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-color: #3b5998;
+  padding: 0.6875em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0.6875em 0.34375em;
+}
+/* line 29, ../sass/components/_question.scss */
+article.question a.icon-twitter, article.emails a.icon-twitter {
+  color: white;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  background-color: #55acee;
+  padding: 0.6875em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0.6875em 0.34375em;
+}
+/* line 37, ../sass/components/_question.scss */
+article.question a.icon-gplus, article.emails a.icon-gplus {
+  color: white;
+  background-color: #dd4b39;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 0.6875em;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0.6875em 0.34375em;
+}
+/* line 45, ../sass/components/_question.scss */
+article.question img.avatar, article.emails img.avatar {
+  float: left;
+}
+/* line 49, ../sass/components/_question.scss */
+article.question header, article.emails header {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  border-style: solid solid none solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  font-size: 1.25em;
+  line-height: 1.1em;
+}
+/* line 59, ../sass/components/_question.scss */
+article.question header:after, article.emails header:after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50px;
+  bottom: -8px;
+  border-style: none none solid solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  background-color: white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 73, ../sass/components/_question.scss */
+article.question section, article.emails section {
+  background-color: #f3f3f3;
+  padding: 30px 30px;
+  border-style: solid solid none solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  -webkit-box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15);
+  -moz-box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15);
+  box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15);
+}
+/* line 80, ../sass/components/_question.scss */
+article.question section h1, article.emails section h1 {
+  font-size: 0.9375em;
+  line-height: 1.46667em;
+  padding-top: 0.73333em;
+  margin-left: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 86, ../sass/components/_question.scss */
+article.question section hr, article.emails section hr {
+  clear: both;
+  border-style: solid none none none;
+  border-color: #cccccc;
+  border-width: 1px;
+  margin: 0 0 0.6875em 0;
+}
+/* line 93, ../sass/components/_question.scss */
+article.question section time, article.emails section time {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  display: block;
+}
+/* line 97, ../sass/components/_question.scss */
+article.question section span, article.emails section span {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+}
+/* line 101, ../sass/components/_question.scss */
+article.question footer, article.emails footer {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.question footer:after, article.emails footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 108, ../sass/components/_question.scss */
+article.question footer a.question-answer, article.emails footer a.question-answer {
+  background-color: rgba(255, 92, 3, 0);
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  -ms-border-radius: 0 0 0 4px;
+  -o-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+}
+/* line 114, ../sass/components/_question.scss */
+article.question footer a.question-answer:hover, article.emails footer a.question-answer:hover {
+  background-color: #ff5c03;
+}
+/* line 117, ../sass/components/_question.scss */
+article.question footer a.question-share, article.emails footer a.question-share {
+  position: relative;
+  float: right;
+  padding: 15px 20px;
+  background-color: rgba(255, 92, 3, 0);
+  -webkit-border-radius: 0 0 4px 0;
+  -moz-border-radius: 0 0 4px 0;
+  -ms-border-radius: 0 0 4px 0;
+  -o-border-radius: 0 0 4px 0;
+  border-radius: 0 0 4px 0;
+  z-index: 1;
+}
+/* line 126, ../sass/components/_question.scss */
+article.question footer a.question-share:hover, article.emails footer a.question-share:hover {
+  background-color: #ff5c03;
+}
+/* line 129, ../sass/components/_question.scss */
+article.question footer a.question-share:before, article.emails footer a.question-share:before {
+  padding-left: 5px;
+}
+/* line 135, ../sass/components/_question.scss */
+article.question footer a.question-manage:hover, article.emails footer a.question-manage:hover {
+  background-color: green;
+}
+/* line 141, ../sass/components/_question.scss */
+article.question footer a.question-delete:hover, article.emails footer a.question-delete:hover {
+  background-color: orange;
+  color: #333333;
+}
+/* line 148, ../sass/components/_question.scss */
+article.question footer a.question-hide:hover, article.emails footer a.question-hide:hover {
+  background-color: orange;
+  color: #333333;
+}
+/* line 152, ../sass/components/_question.scss */
+article.question footer a:before, article.emails footer a:before {
+  margin-right: .5em;
+}
+/* line 156, ../sass/components/_question.scss */
+article.question aside, article.emails aside {
+  display: none;
+  border-style: solid solid none solid;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: white;
+}
+/* line 162, ../sass/components/_question.scss */
+article.question aside nav, article.emails aside nav {
+  *zoom: 1;
+  border-bottom: 1px solid #cccccc;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.question aside nav:after, article.emails aside nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 165, ../sass/components/_question.scss */
+article.question aside nav h2, article.emails aside nav h2 {
+  padding: 15px 30px;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  float: left;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* line 172, ../sass/components/_question.scss */
+article.question aside nav div, article.emails aside nav div {
+  float: right;
+}
+/* line 174, ../sass/components/_question.scss */
+article.question aside nav div span, article.emails aside nav div span {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 15px;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+}
+/* line 179, ../sass/components/_question.scss */
+article.question aside nav div a, article.emails aside nav div a {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  padding: 15px;
+  border-left: 1px solid #cccccc;
+}
+/* line 186, ../sass/components/_question.scss */
+article.question aside div, article.emails aside div {
+  overflow: hidden;
+}
+/* line 189, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list, article.emails aside ul.question-answer-list {
+  *zoom: 1;
+  -webkit-transition: margin-left 0.1s;
+  -moz-transition: margin-left 0.1s;
+  -o-transition: margin-left 0.1s;
+  transition: margin-left 0.1s;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.question aside ul.question-answer-list:after, article.emails aside ul.question-answer-list:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 192, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li, article.emails aside ul.question-answer-list > li {
+  border-top: 5px solid green;
+  padding: 30px;
+  float: left;
+  position: relative;
+}
+/* line 197, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li img.poster, article.emails aside ul.question-answer-list > li img.poster {
+  width: 50%;
+  max-width: 100%;
+}
+/* line 201, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li img.logo, article.emails aside ul.question-answer-list > li img.logo {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 50px;
+}
+/* line 208, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-head h2, article.emails aside ul.question-answer-list > li div.question-answer-head h2 {
+  font-size: 0.9375em;
+  line-height: 1.46667em;
+  padding-top: 0.73333em;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 214, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-head h3, article.emails aside ul.question-answer-list > li div.question-answer-head h3 {
+  font-size: 0.8125em;
+  line-height: 1.69231em;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 219, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-like, article.emails aside ul.question-answer-list > li div.question-answer-like {
+  float: left;
+}
+/* line 221, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-like a.question-vote, article.emails aside ul.question-answer-list > li div.question-answer-like a.question-vote {
+  margin-left: 1.03125em;
+}
+/* line 229, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body, article.emails aside ul.question-answer-list > li div.question-answer-body {
+  margin-left: 70px;
+}
+/* line 231, ../sass/components/_question.scss */
+article.question aside ul.question-answer-list > li div.question-answer-body time, article.emails aside ul.question-answer-list > li div.question-answer-body time {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  margin-bottom: 1.46667em;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  font-weight: 200;
+}
+/* line 242, ../sass/components/_question.scss */
+article.question figure, article.emails figure {
+  background-color: #f3f3f3;
+  position: relative;
+  border-style: solid solid none solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  /*
+  &:after{
+  	content: " ";
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	height: 100%;
+  	width: 100%;
+  	z-index: 1;
+  	@include background(
+  			linear-gradient(145deg,  rgba(255,255,255,0) 0%, rgba(197,197,197,0) 44%, rgba(12,13,14,1) 100%)
+  	);
+  }
+  */
+}
+/* line 248, ../sass/components/_question.scss */
+article.question figure .image-figure, article.emails figure .image-figure {
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 254, ../sass/components/_question.scss */
+article.question figure figcaption, article.emails figure figcaption {
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+}
+/* line 263, ../sass/components/_question.scss */
+article.question figure figcaption h2, article.emails figure figcaption h2 {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  margin-bottom: 0.45833em;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 270, ../sass/components/_question.scss */
+article.question figure figcaption h3, article.emails figure figcaption h3 {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+}
+/* line 273, ../sass/components/_question.scss */
+article.question figure figcaption p, article.emails figure figcaption p {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  margin-top: 0.36667em;
+  margin-bottom: 0.36667em;
+}
+/* line 296, ../sass/components/_question.scss */
+article.question [role=alertdialog], article.emails [role=alertdialog] {
+  display: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0);
+  -webkit-transition: background-color 0.1s;
+  -moz-transition: background-color 0.1s;
+  -o-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+}
+/* line 298, ../sass/components/_question.scss */
+article.question [role=alertdialog] div, article.emails [role=alertdialog] div {
+  width: 50%;
+  margin: 25% auto;
+  text-align: center;
+}
+/* line 316, ../sass/components/_question.scss */
+article.question [role=form], article.emails [role=form] {
+  position: absolute;
+  overflow-y: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.9);
+  padding: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  color: white;
+}
+/* line 329, ../sass/components/_question.scss */
+article.question [role=form] label, article.emails [role=form] label {
+  font-size: 0.9375em;
+  line-height: 1.46667em;
+}
+/* line 332, ../sass/components/_question.scss */
+article.question [role=form] textarea, article.emails [role=form] textarea {
+  min-height: 200px;
+}
+/* line 335, ../sass/components/_question.scss */
+article.question [role=form] input[name=file], article.emails [role=form] input[name=file] {
+  padding: 30px 30px 30px 60px;
+  background-color: #f3f3f3;
+}
+/* line 339, ../sass/components/_question.scss */
+article.question [role=form] input[name=file].done, article.emails [role=form] input[name=file].done {
+  background-color: #33993f;
+  border-color: #287a32;
+}
+/* line 345, ../sass/components/_question.scss */
+article.question [role=form] ul.respondents-list li, article.emails [role=form] ul.respondents-list li {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.question [role=form] ul.respondents-list li:after, article.emails [role=form] ul.respondents-list li:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 347, ../sass/components/_question.scss */
+article.question [role=form] ul.respondents-list li img, article.emails [role=form] ul.respondents-list li img {
+  float: left;
+  border-color: transparent;
+}
+/* line 348, ../sass/components/_question.scss */
+article.question [role=form] ul.respondents-list li label, article.emails [role=form] ul.respondents-list li label {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: inherit;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  padding-top: 0.91667em;
+}
+/* line 357, ../sass/components/_question.scss */
+article.question [role=form] p, article.emails [role=form] p {
+  margin-bottom: 30px;
+}
+/* line 363, ../sass/components/_question.scss */
+article.question.active section, article.active.emails section {
+  -webkit-box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15), inset 0 -4px 0px rgba(204, 204, 204, 0.15);
+  -moz-box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15), inset 0 -4px 0px rgba(204, 204, 204, 0.15);
+  box-shadow: inset 0 4px 0px rgba(204, 204, 204, 0.15), inset 0 -4px 0px rgba(204, 204, 204, 0.15);
+}
+/* line 369, ../sass/components/_question.scss */
+article.question.active aside, article.active.emails aside {
+  display: block;
+  position: relative;
+}
+/* line 373, ../sass/components/_question.scss */
+article.question.active aside:after, article.active.emails aside:after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50px;
+  top: -8px;
+  border-style: solid solid none none;
+  border-width: 1px;
+  border-color: #cccccc;
+  background-color: white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 386, ../sass/components/_question.scss */
+article.question.active figure, article.active.emails figure {
+  display: none;
+}
+/* line 390, ../sass/components/_question.scss */
+article.question.active footer a.question-answer, article.active.emails footer a.question-answer {
+  padding: 15px 30px;
+  float: left;
+  color: white;
+  background-color: #ff5c03;
+  -webkit-transition: background-color 0.1s;
+  -moz-transition: background-color 0.1s;
+  -o-transition: background-color 0.1s;
+  transition: background-color 0.1s;
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  -ms-border-radius: 0 0 0 4px;
+  -o-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+}
+/* line 398, ../sass/components/_question.scss */
+article.question.active footer a.question-answer:after, article.active.emails footer a.question-answer:after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 50px;
+  top: -7px;
+  background-color: #ff5c03;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+/* line 413, ../sass/components/_question.scss */
+article.question.share footer .question-share, article.share.emails footer .question-share {
+  background-color: #ff5c03;
+  -webkit-border-radius: 0 0 4px 0;
+  -moz-border-radius: 0 0 4px 0;
+  -ms-border-radius: 0 0 4px 0;
+  -o-border-radius: 0 0 4px 0;
+  border-radius: 0 0 4px 0;
+}
+/* line 417, ../sass/components/_question.scss */
+article.question.share footer .question-share:after, article.share.emails footer .question-share:after {
+  content: ' ';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 30px;
+  top: -7px;
+  background-color: #ff5c03;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 428, ../sass/components/_question.scss */
+article.question.share [role=alertdialog], article.share.emails [role=alertdialog] {
+  display: block;
+  background-color: rgba(51, 51, 51, 0.95);
+}
+/* line 434, ../sass/components/_question.scss */
+article.question.glow, article.glow.emails {
+  -webkit-box-shadow: 0 0 15px rgba(85, 172, 238, 0.5);
+  -moz-box-shadow: 0 0 15px rgba(85, 172, 238, 0.5);
+  box-shadow: 0 0 15px rgba(85, 172, 238, 0.5);
+}
+/* line 439, ../sass/components/_question.scss */
+article.question.extended aside, article.extended.emails aside {
+  display: block;
+}
+/* line 443, ../sass/components/_question.scss */
+article.question.extended aside ul.question-answer-list li, article.extended.emails aside ul.question-answer-list li {
+  float: none;
+  width: auto;
+}
+/* line 451, ../sass/components/_question.scss */
+article.question.hidden-question, article.hidden-question.emails {
+  opacity: .7;
+}
+
+/* line 5, ../sass/components/_emails.scss */
+#email-filter-form {
+  padding: 30px 0;
+  text-align: right;
+}
+
+/* line 13, ../sass/components/_emails.scss */
+article.emails header h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 19, ../sass/components/_emails.scss */
+article.emails section h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 20, ../sass/components/_emails.scss */
+article.emails section h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 21, ../sass/components/_emails.scss */
+article.emails section code {
+  font-family: monospace;
+  word-wrap: break-word;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  display: block;
+  white-space: pre;
+  padding: 15px 0;
+}
+/* line 30, ../sass/components/_emails.scss */
+article.emails footer {
+  text-align: right;
+  padding: 15px 30px;
+  font-size: 0.75em;
+  line-height: 1.83333em;
+}
+
+/* line 5, ../sass/components/_user.scss */
+#user-filter-form {
+  padding: 30px 0;
+  text-align: right;
+}
+
+/* line 10, ../sass/components/_user.scss */
+article.user {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 12, ../sass/components/_user.scss */
+article.user img.avatar {
+  float: left;
+}
+/* line 17, ../sass/components/_user.scss */
+article.user header {
+  *zoom: 1;
+  background-color: white;
+  border-style: solid solid none solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  padding: 30px;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+article.user header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 25, ../sass/components/_user.scss */
+article.user header h1 {
+  font-size: 0.9375em;
+  line-height: 1.46667em;
+  padding-top: 0.73333em;
+  margin-left: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 31, ../sass/components/_user.scss */
+article.user header h2 {
+  font-size: 0.75em;
+  line-height: 1.83333em;
+  margin-left: 75px;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+/* line 44, ../sass/components/_user.scss */
+article.user footer a.user-delete {
+  background-color: rgba(255, 92, 3, 0);
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  -ms-border-radius: 0 0 0 4px;
+  -o-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+}
+/* line 50, ../sass/components/_user.scss */
+article.user footer a.user-delete:hover {
+  background-color: #ff5c03;
+}
+/* line 53, ../sass/components/_user.scss */
+article.user footer a.user-admin {
+  background-color: rgba(87, 107, 148, 0);
+}
+/* line 57, ../sass/components/_user.scss */
+article.user footer a.user-admin:hover {
+  background-color: #576b94;
+}
+/* line 62, ../sass/components/_user.scss */
+article.user.extended {
+  background-color: #f3f3f3;
+}
+
+/* line 7, ../sass/components/_tabs.scss */
+[aria-hidden=false] {
+  display: block;
+}
+
+/* line 8, ../sass/components/_tabs.scss */
+[aria-hidden=true] {
+  display: none;
+}
+
+/* line 16, ../sass/components/_tabs.scss */
+[role=tablist] {
+  *zoom: 1;
+}
+/* line 38, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+[role=tablist]:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 18, ../sass/components/_tabs.scss */
+[role=tablist] [role=tab] {
+  float: left;
+  border-style: solid solid none solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  margin-right: -1px;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  -ms-border-radius: 4px 4px 0 0;
+  -o-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+}
+/* line 26, ../sass/components/_tabs.scss */
+[role=tablist] [role=tab] a {
+  display: block;
+  text-align: center;
+  padding: 0.6875em;
+  font-size: 1.25em;
+  line-height: 1.1em;
+}
+
+/* line 35, ../sass/components/_tabs.scss */
+[aria-selected=true] {
+  background-color: #f3f3f3;
+}
+
+/* line 39, ../sass/components/_tabs.scss */
+[aria-selected=false] {
+  background-color: white;
+}
+/* line 41, ../sass/components/_tabs.scss */
+[aria-selected=false] a {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 13px !important;
+}
+
+/* line 47, ../sass/components/_tabs.scss */
+[role=tabpanel] {
+  margin-top: -1px;
+  padding: 30px;
+  background-color: #f3f3f3;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
+
+/* line 27, ../sass/screen.scss */
+img.poster {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* line 31, ../sass/screen.scss */
+video {
+  width: 100%;
+}

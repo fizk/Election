@@ -1,0 +1,18 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda : access_code{% endblock %}
+
+{% block head %}
+{% parent %}
+
+{% endblock %}
+
+{% block content %}
+	<form id="user-filter-form" role="form" class="form-inline" method="get" action="/admin/users">
+		<label class="icon-filter"></label>
+		<input type="search" class="form-control" placeholder="Leita að notanda..." />
+	</form>
+	<ul class="question-list">
+		{% include "./users-list.html" %}
+	</ul>
+{% endblock %}

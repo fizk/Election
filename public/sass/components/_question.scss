@@ -1,0 +1,455 @@
+
+@import "compass/css3/box-shadow";
+@import "compass/css3/transform";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3/transition";
+@import "compass/css3/inline-block";
+@import "compass/typography/text/ellipsis";
+
+
+// - - - - [QUESTION LIST] - - - - - - - - - - - - - - - - - - - - - - - - -
+	.question-list{
+		@extend %panel_list;
+	}
+
+
+	article.question{
+		@include border-radius;
+		@include box-shadow(0 0 15px rgba($color-twitter,.0));
+		@include transition(all $animation-speed*2 linear);
+	  	position: relative;
+		a.icon-facebook{
+			color: $color-white;
+			@include inline-block;
+			background-color: $color-facebook;
+			padding: rhythm(1/2,$font-size-base);
+			@include border-radius(50%);
+			margin: rhythm(1/2,$font-size-base) rhythm(1/4,$font-size-base);
+		}
+		a.icon-twitter{
+			color: $color-white;
+			@include inline-block;
+			background-color: $color-twitter;
+			padding: rhythm(1/2,$font-size-base);
+			@include border-radius(50%);
+			margin: rhythm(1/2,$font-size-base) rhythm(1/4,$font-size-base);
+		}
+		a.icon-gplus{
+			color: $color-white;
+			background-color: $color-google;
+			@include inline-block;
+			padding: rhythm(1/2,$font-size-base);
+			@include border-radius(50%);
+			margin: rhythm(1/2,$font-size-base) rhythm(1/4,$font-size-base);
+		}
+		img.avatar{
+			@extend %avatar;
+			float: left;
+		}
+	  	header{
+		  	position: relative;
+			background-color: $color-white;
+		  	padding: $padding;
+		  	border-style: solid solid none solid;
+		  	border-color: $color-gray;
+		  	border-width: 1px;
+		  	@include border-radius($default-border-radius $default-border-radius 0 0);
+		  	@include adjust-font-size-to($font-size-large,1,$font-size-base);
+
+			&:after{
+			  content: ' ';
+			  position: absolute;
+			  width: 15px;
+			  height: 15px;
+			  left: 50px;
+			  bottom: -8px;
+			  border-style: none none solid solid;
+			  border-color: $color-gray;
+			  border-width: 1px;
+			  background-color: $color-white;
+			  @include transform( rotate( -45deg ) );
+			}
+		}
+	  	section{
+		  	background-color: $color-gray-light;
+		  	padding: $padding $padding;
+		  	border-style: solid solid none solid;
+		  	border-color: $color-gray;
+		  	border-width: 1px;
+		  	@include box-shadow(inset 0 4px 0px rgba($color-gray,.15));
+		  	h1{
+				@include adjust-font-size-to($font-size-small,1,$font-size-base);
+			  	@include padding-leader(1/2,$font-size-small);
+			  	margin-left: 75px;
+			  	@include ellipsis;
+			}
+			hr{
+			  	clear: both;
+				border-style: solid none none none;
+				border-color: $color-gray;
+				border-width: 1px;
+			  	margin: 0 0 rhythm(1/2,$font-size-base) 0;
+			}
+		  	time{
+				@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+			  	display: block;
+			}
+		  	span{
+			  	@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+			}
+		}
+	  	footer{
+			@extend %panel-footer;
+		  	@include pie-clearfix;
+
+		  	a.question-vote{
+			  @extend %footer-buttons;
+			}
+		  	a.question-answer{
+			  @extend %footer-buttons;
+			  background-color: rgba($color-red,0);
+			  @include border-radius(0 0 0 $default-border-radius);
+			  //@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+			}
+		  	a.question-answer:hover{
+				background-color: rgba($color-red,1);
+		  	}
+		  	a.question-share{
+			 	position: relative;
+			 	@extend %footer-buttons;
+			 	float: right;
+				padding: $padding/2 $padding/1.5;
+				background-color: rgba($color-red,0);
+				@include border-radius(0 0 $default-border-radius 0);
+			 	z-index: 1;
+			}
+			a.question-share:hover{
+				background-color: rgba($color-red,1);
+			}
+			a.question-share:before{
+				padding-left: 5px;
+			}
+		  	a.question-manage{
+			  	@extend %footer-buttons;
+			}
+		  	a.question-manage:hover{
+				background-color: green;
+			}
+		  	a.question-delete{
+			  	@extend %footer-buttons;
+			}
+		  	a.question-delete:hover{
+				background-color: orange;
+			  	color: $color-black;
+			}
+			a.question-hide{
+				@extend %footer-buttons;
+			}
+			a.question-hide:hover{
+				background-color: orange;
+				color: $color-black;
+			}
+		  	a:before{
+			  margin-right: .5em;
+			}
+		}
+	  	aside{
+			display: none;
+			border-style: solid solid none solid;
+			border-width: 1px;
+			border-color: $color-gray;
+		    background-color: $color-white;
+			nav{
+				@include pie-clearfix;
+			  	border-bottom: 1px solid $color-gray;
+			  	h2{
+				  	padding: $padding/2 $padding;
+				  	@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				  	float: left;
+				  	font-weight: 600;
+				  	text-transform: uppercase;
+				}
+			  	div{
+					float: right;
+				  	span{
+					  	@include inline-block;
+					  	padding: $padding/2;
+					  	@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					}
+				  	a{
+					  	@include inline-block;
+					  	padding: $padding/2;
+					  	border-left: 1px solid $color-gray;
+					}
+				}
+		 	}
+		  	div{
+				overflow: hidden;
+			}
+			ul.question-answer-list{
+				@include pie-clearfix;
+			  	@include transition(margin-left $animation-speed);
+			  	> li{
+				  	border-top: 5px solid green;
+				  	padding: $padding;
+				  	float: left;
+					position: relative;
+					img.poster{
+						width: 50%;
+						max-width: 100%;
+					}
+					img.logo{
+						position: absolute;
+						right: $padding;
+						top: $padding;
+						width: 50px;
+					}
+				  	div.question-answer-head{
+						h2{
+							@include adjust-font-size-to($font-size-small,1,$font-size-base);
+						  	@include padding-leader(1/2,$font-size-small);
+						  	font-weight: 600;
+						  	@include ellipsis;
+						}
+					  	h3{
+						  	@include adjust-font-size-to(13px,1,$font-size-base);
+						  	@include ellipsis;
+						}
+					}
+				  	div.question-answer-like{
+						float: left;
+					  	a.question-vote{
+							margin-left: rhythm(0.75,$font-size-base);
+						}
+					  	a.icon-cancel{
+
+						}
+
+					}
+				  	div.question-answer-body{
+					  	margin-left: 70px;
+					  	time{
+							@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+						  	@include margin-trailer(1,$font-size-small);
+						  	@include inline-block;
+						  	font-weight: 200;
+						}
+						@extend %default-text;
+					}
+				}
+			}
+		}
+		figure{
+			background-color: $color-gray-light;
+			position: relative;
+			border-style: solid solid none solid;
+			border-color: $color-gray;
+			border-width: 1px;
+			.image-figure{
+				height: 100px;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			figcaption{
+				z-index: 2;
+				//position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				//color: $color-white;
+				padding: $padding/2 $padding;
+				//text-shadow: 0 0 2px $color-black;
+				h2{
+					@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					@include margin-trailer(1/4, $font-size-smaller);
+					font-weight: 600;
+					text-transform: uppercase;
+					@include ellipsis;
+				}
+				h3{
+					@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				}
+				p{
+					@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					@include margin-leader(1/4, $font-size-small);
+					@include margin-trailer(1/4, $font-size-small);
+				}
+			}
+			/*
+			&:after{
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				z-index: 1;
+				@include background(
+						linear-gradient(145deg,  rgba(255,255,255,0) 0%, rgba(197,197,197,0) 44%, rgba(12,13,14,1) 100%)
+				);
+			}
+			*/
+
+		}
+
+	  	[role=alertdialog]{
+		  display: none;
+		  	div{
+			  width: 50%;
+			  margin: 25% auto;
+				text-align: center;
+			}
+		  	@include border-radius;
+			position: absolute;
+		  	top: 0;
+		  	right: 0;
+		  	bottom: 0;
+		  	left: 0;
+		  	height: 100%;
+		  	width: 100%;
+		  	background-color: rgba($color-black,0);
+			@include transition(background-color $animation-speed );
+
+		}
+
+	  	[role=form]{
+			position: absolute;
+		  	overflow-y: auto;
+		  	top: 0;
+		  	right: 0;
+		  	bottom: 0;
+		  	left: 0;
+		  	width: 100%;
+		  	height: 100%;
+		  	background-color: rgba($color-black,.9);
+		  	padding: $padding;
+		  	@include border-radius;
+		  	color: $color-white;
+		  	label{
+				@include adjust-font-size-to($font-size-small,1,$font-size-base);
+		  	}
+			textarea{
+				min-height: 200px;
+			}
+			input[name=file]{
+				padding: $padding $padding $padding $padding*2;
+			  	background-color: $color-gray-light;
+			}
+		  	input[name=file].done{
+				background-color: $color-green;
+				border-color: shade($color-green,20%);
+			}
+		  	ul.respondents-list{
+			  	//margin: rhythm(1,$font-size-base) 0;
+				li{
+				  	@include pie-clearfix;
+					img{ float: left; border-color: transparent }
+				  	label{
+						//margin-left: $padding*2;
+					  	@include ellipsis;
+					  	display: inherit;
+					  	@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					  	@include padding-leader(1/2,$font-size-smaller);
+				  	}
+				}
+			}
+			p{
+				margin-bottom: $padding;
+			}
+		}
+
+	  	&.active{
+		  	section{
+			  @include box-shadow(
+					  inset 0 4px 0px rgba($color-gray,.15),
+					  inset 0 -4px 0px rgba($color-gray,.15)
+			  );
+			}
+			aside{
+				display: block;
+			  	position: relative;
+			}
+		  	aside:after{
+				content: ' ';
+				position: absolute;
+				width: 15px;
+				height: 15px;
+				left: 50px;
+				top: -8px;
+			  	border-style: solid solid none none;
+			  	border-width: 1px;
+			  	border-color: $color-gray;
+				background-color: $color-white;
+				@include transform(rotate(-45deg));
+		  	}
+			figure{
+				display: none;
+			}
+		  	footer{
+				a.question-answer{
+			  		padding: $padding/2 $padding;
+			  		float: left;
+			  		color: $color-white;
+			  		background-color: rgba($color-red,1);
+			  		@include transition(background-color $animation-speed);
+			  		@include border-radius(0 0 0 $default-border-radius);
+				}
+			  	a.question-answer:after{
+					content: ' ';
+					position: absolute;
+					width: 15px;
+					height: 15px;
+					left: 50px;
+					top: -7px;
+					background-color: $color-red;
+				  	@include transform(rotate(-45deg));
+				}
+		  	}
+		}
+
+	  	&.share{
+			footer{
+				.question-share{
+					background-color: $color-red;
+				  	@include border-radius(0 0 $default-border-radius 0);
+				}
+				.question-share:after{
+					content: ' ';
+					position: absolute;
+					width: 15px;
+					height: 15px;
+					left: 30px;
+					top: -7px;
+					background-color: $color-red;
+				  	@include transform(rotate(45deg));
+				}
+			}
+		  	[role=alertdialog]{
+				display: block;
+				background-color: rgba($color-black,.95);
+		  	}
+		}
+
+		&.glow{
+			@include box-shadow(0 0 15px rgba($color-twitter,.5));
+		}
+
+		&.extended{
+			aside{
+				display: block;
+
+				ul.question-answer-list{
+					li{
+						float: none;
+						width: auto;
+					}
+				}
+			}
+		}
+
+		&.hidden-question{
+			opacity: .7;
+		}
+
+	}

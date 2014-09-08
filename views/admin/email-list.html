@@ -1,0 +1,16 @@
+{% for mail in mails %}
+<li>
+	<article class="emails">
+		<header>
+			<h1>{{mail.email}}</h1>
+		</header>
+		<section>
+			<h2>{{mail.party}}</h2>
+			<h3>{{mail.constituency}}</h3>
+			<code>{{mail.code}}</code>
+		</section>
+		<footer>
+			{{mail.date|date('Y-m-d H:i')}}
+		</footer>
+	</article>
+</li>

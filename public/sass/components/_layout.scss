@@ -1,0 +1,203 @@
+
+	@import "compass/utilities/general/clearfix";
+	@import "compass/css3/box-shadow";
+	@import "compass/css3/inline-block";
+	@import "compass/css3/images";
+	@import "compass/css3/transform";
+	@import "compass/typography/lists/horizontal-list";
+
+
+	.facebook-login{
+
+		background-color: $color-purple;
+		@include background(
+			linear_gradient(top, tint($color-purple,20%), $color-purple)
+		);
+		margin: $padding auto;
+		display: block;
+		border:1px solid shade($color-purple,20%);
+		@include border-radius;
+		//@include inline-block;
+		width: 268px;
+		i{
+			@include inline-block;
+			color: $color-white;
+			padding: $padding/3;
+			border-style: solid solid none none;
+			border-width: 1px;
+			border-color: tint($color-purple,30%);
+		}
+		span{
+			@include inline-block;
+			@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+			line-height: 1.9em;//TODO WTF
+			text-shadow: 0 2px shade($color-purple,20%);
+			text-transform: uppercase;
+			color: $color-white;
+			padding: $padding/3 $padding/2;
+			border-top:1px solid tint($color-purple,30%);
+			border-left: 1px solid shade($color-purple,20%);
+		}
+	}
+
+	header.page-header{
+		border:none;
+		hgroup{
+			h1{
+				@include adjust-font-size-to(48px,4,$font-size-base);
+				text-transform: uppercase;
+				text-align: center;
+			}
+			h2{
+				text-align: center;
+			}
+			h3{
+				@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				text-transform: uppercase;
+				text-align: center;
+			}
+		}
+		hr{
+			width: 50%;
+			margin: auto;
+		}
+
+		img.avatar{
+			padding: $padding/10;
+			margin-right: $padding/2;
+			background-color: $color-white;
+			border:1px solid $color-gray;
+			@include border-radius;
+		}
+
+		[role=form]{
+			label{
+				@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+				font-weight: 600;
+				text-transform: uppercase;
+				display: block;
+			}
+		}
+
+		[role=menu]{
+			display: table;
+			table-layout: fixed;
+			&>div{
+				display: table-cell;
+				vertical-align: top;
+				width: 100%;
+			}
+			div[role=img]{
+				position: relative;
+				width: 60px;
+				margin-right: $padding/2;
+				&>div{
+					padding: $padding/10;
+					background-color: $color-white;
+					border:1px solid $color-gray;
+					@include border-radius;
+					@include inline-block;
+				}
+				&>div:after{
+					content: ' ';
+					position: absolute;
+					width: 15px;
+					height: 15px;
+					right: -7px;
+					bottom: 23px;
+					border-style: none solid solid none;
+					border-color: $color-gray;
+					border-width: 1px;
+					background-color: white;
+					@include transform(rotate(-45deg));
+				}
+				img{
+					border:none;
+					padding: 0;
+					margin: 0;
+					position: relative;
+					z-index: 1;
+				}
+			}
+
+			div[role=question]{
+				position: relative;
+				padding-left: $padding/2;
+				span{
+					position: absolute;
+					right: 0;
+					color: $color-orange;
+					@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					padding: $padding/4;
+				}
+			}
+			input{
+				width: 100%;
+			}
+		}
+
+		[role=option]{
+			display: table;
+			table-layout: fixed;
+			>div{
+				display: table-cell;
+				width: 25%;
+			}
+		}
+
+		#filter-form .row{
+			.form-group{
+				margin: 0;
+			}
+		}
+		.tag-list{
+			@include horizontal-list-container;
+			> li{
+				@include horizontal-list-item(0);
+				padding-left: $padding/2;
+				&:first-child{
+					padding-left: $padding/2;
+				}
+				input{ display: none; }
+				label{
+					padding: $padding/8 $padding/4;
+					padding-left: 0;
+					@include adjust-font-size-to($font-size-smaller,1,$font-size-base);
+					@include border-radius;
+					cursor: pointer;
+					color: $color-white;
+					background-color: $color-gray-dark;
+					position: relative;
+				}
+				label:after{
+					content: ' ';
+					display: block;
+					border-style: solid;
+					border-width: 14px;
+					border-color: transparent $color-gray-dark transparent transparent ;
+					position: absolute;
+					left: -26px;
+					top: 0;
+				}
+				input:checked + label{
+					background-color: $color-green;
+				}
+				input:checked + label:after{
+					border-color: transparent $color-green transparent transparent ;
+				}
+			}
+		}
+	}
+
+	main.container{
+		> h1{
+		  text-align: center;
+			@include adjust-font-size-to($font-size-large,1,$font-size-base);
+		 	@include margin-leader(1, $font-size-large);
+		  	@include margin-trailer(1, $font-size-large);
+		}
+	}
+
+
+
+

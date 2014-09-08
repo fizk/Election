@@ -1,0 +1,40 @@
+
+@import "compass/css3/box-sizing";
+@import "compass/css3/border-radius";
+	$default-border-radius: 4px;
+@import "compass/typography/vertical_rhythm";
+	$base-font-size: $font-size-base;
+	$base-line-height: $font-lineheight-base;
+	@include establish-baseline;
+
+*{
+	@include box-sizing(border-box);
+}
+body{
+ 	font-family: open-sans;
+  	color:$color-black;
+	background-size: 100%;
+	//background-attachment: fixed;
+	//background-image: url(/backgrounds/1391714_10201307724989573_1213930030_n.jpg);
+}
+a{
+  text-decoration: none;
+  color:$color-black;
+  &:hover{ text-decoration: none; }
+  &:active{ text-decoration: none; }
+}
+p:empty{ display: none; }
+
+
+// http://aghoshb.com/articles/css-how-to-remove-firefoxs-dotted-outline-on-buttons-and-anchor-tags.html
+a:focus, a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  border: 0;
+  outline : 0;
+}
+

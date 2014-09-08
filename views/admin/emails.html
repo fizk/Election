@@ -1,0 +1,17 @@
+{% extends '../layout.html' %}
+
+{% block title %}Spurðu frambjóðanda{% endblock %}
+
+{% block head %}
+{% parent %}
+{% endblock %}
+
+{% block content %}
+<form id="email-filter-form" role="form" class="form-inline" method="get" action="/admin/emails">
+	<label class="icon-filter"></label>
+	<input type="search" class="form-control" placeholder="Leita eftir netfangi...">
+</form>
+<ul id="list" class="question-list">
+	{% include "./email-list.html" %}
+</ul>
+{% endblock %}

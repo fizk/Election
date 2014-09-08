@@ -1,0 +1,7 @@
+.DS_Store
+.idea/
+.sass-cache/
+*.psd
+node_modules/
+public/vendor/
+config.js
